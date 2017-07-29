@@ -1,3 +1,5 @@
+/*
+
 class Fupload {
 
 public void upload() {
@@ -163,3 +165,4 @@ byte[] compressImage(PImage img) {
   return baStream.toByteArray();
 }
 }
+*/

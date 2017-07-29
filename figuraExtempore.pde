@@ -13,12 +13,12 @@ import java.awt.image.*;
 import com.aetrion.flickr.*;
 import java.lang.Thread;
 
-Fupload fupload;
+//Fupload fupload;
 TSPS tspsReceiver;
 Crop crop;
 Draw draw;
 Flickr flickr;
-Uploader uploader;
+// Uploader uploader;
 Auth auth;
 Timer timer;
 
@@ -41,7 +41,7 @@ String debugText;
 PImage screenShot;
 PImage fader;
 Boolean debug = false;
-Boolean uploadNow = false;
+//Boolean uploadNow = false;
 Boolean fade = false;
 // This will keep track of whether the thread is finished
 boolean finished = false;
@@ -49,12 +49,13 @@ boolean finished = false;
 float percent = 0;
 
 void setup() {
-  size(displayWidth, displayHeight);
+  //size(displayWidth, displayHeight);
+  fullScreen();
 
   crop = new Crop();
   draw = new Draw();
   timer = new Timer(5000);
-  fupload = new Fupload();
+  // fupload = new Fupload();
   flickr = new Flickr(apiKey, secretKey, (new Flickr(apiKey)).getTransport());
   tspsReceiver= new TSPS(this, 12000);
 //  fupload.authenticate();
@@ -72,6 +73,7 @@ void setup() {
 
 void draw() {
   debugText = "";
+ /*
   if (uploadNow) {
     screenShot = get(0, 0, width, 696);
     printConsole("Starting"); 
@@ -79,8 +81,9 @@ void draw() {
   //  uploadNow = false;
     
   }
+  */
   draw.display();
-  crop.display();
+//  crop.display();
   debugger();
   
   if (fade) {
@@ -136,4 +139,3 @@ void personLeft( TSPSPerson p ) {
   }
   lastDrawn = millis();
 }
-
